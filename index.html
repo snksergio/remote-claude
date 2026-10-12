@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EEF0EF">
+<title>Hello World</title>
+<meta name="description" content="Teste do Remote Control do Claude Code no padrão visual do app Eletroposto iGreen.">
+<link rel="icon" href="igreen-isotipo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap">
+<style>
+  :root {
+    --fundo: #EEF0EF;
+    --tinta: #111513;
+    --cinza: #5C6460;
+    --borda: #E1E5E2;
+    --verde: #338449;
+    --verde-esc: #276638;
+    --branco: #FFFFFF;
+    --w: 390px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { min-height: 100%; }
+  body {
+    background: var(--fundo);
+    color: var(--tinta);
+    font-family: 'Manrope', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    justify-content: center;
+  }
+  .tela {
+    width: 100%;
+    max-width: var(--w);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  header {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 16px;
+  }
+  header img { width: 22px; height: 31px; display: block; }
+  header span { font-size: 15px; font-weight: 700; }
+  .ms {
+    font-family: 'Material Symbols Rounded';
+    font-size: 22px;
+    line-height: 1;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  main { flex: 1; display: flex; flex-direction: column; padding-bottom: 24px; }
+  .hero {
+    padding: 28px 16px 20px;
+    text-align: center;
+  }
+  .aura {
+    width: 112px; height: 112px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    box-shadow: 0 1px 2px rgba(17,21,19,0.05), 0 4px 14px rgba(17,21,19,0.05);
+    position: relative;
+  }
+  .aura::before {
+    content: "";
+    position: absolute; inset: -14px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(51,132,73,0.16) 0%, rgba(51,132,73,0) 70%);
+    z-index: -1;
+  }
+  .aura .ms { font-size: 48px; color: var(--verde); font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48; }
+  h1 { font-size: 26px; font-weight: 800; letter-spacing: -0.4px; line-height: 1.15; }
+  .sub { margin-top: 8px; font-size: 14.5px; color: var(--cinza); line-height: 1.45; }
+  .card {
+    margin: 0 16px;
+    border-radius: 24px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    padding: 2px 16px;
+  }
+  .linha {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borda);
+  }
+  .linha:last-child { border-bottom: 0; }
+  .icone {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--fundo);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--tinta); flex: 0 0 36px;
+  }
+  .icone .ms { font-size: 20px; }
+  .texto { flex: 1; min-width: 0; }
+  .rotulo { font-size: 12.5px; color: var(--cinza); font-weight: 500; }
+  .valor { font-size: 14.5px; font-weight: 700; color: var(--verde); margin-top: 1px; word-break: break-word; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin: 18px 16px 0;
+    height: 30px; padding: 0 12px;
+    border-radius: 15px;
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    font-size: 12.5px; font-weight: 600; color: var(--verde-esc);
+    white-space: nowrap;
+  }
+  .chip .ponto { width: 8px; height: 8px; border-radius: 50%; background: var(--verde); }
+  .rodape { padding: 16px 16px 8px; margin-top: auto; }
+  .btn {
+    width: 100%; height: 48px;
+    border-radius: 24px; border: 0;
+    background: var(--verde); color: var(--branco);
+    font-family: inherit; font-size: 15px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    cursor: pointer;
+  }
+  .btn:active { background: var(--verde-esc); }
+  .btn .ms { font-size: 20px; }
+  .nota { margin-top: 12px; text-align: center; font-size: 12px; color: var(--cinza); }
+</style>
+</head>
+<body>
+<div class="tela">
+  <header>
+    <img src="igreen-isotipo.svg" alt="iGreen">
+    <span>Eletroposto</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="aura"><span class="ms">waving_hand</span></div>
+      <h1>Hello World</h1>
+      <p class="sub">Página de teste publicada pelo Claude Code via Remote Control, no padrão visual do app.</p>
+    </section>
+
+    <div class="card">
+      <div class="linha">
+        <div class="icone"><span class="ms">smartphone</span></div>
+        <div class="texto">
+          <div class="rotulo">Origem</div>
+          <div class="valor">Remote Control pelo celular</div>
+        </div>
+      </div>
+      <div class="linha">
+        <div class="icone"><span class="ms">code</span></div>
+        <div class="texto">
+          <div class="rotulo">Repositório</div>
+          <div class="valor">snksergio/remote-claude</div>
+        </div>
+      </div>
+      <div class="linha">
+        <div class="icone"><span class="ms">calendar_today</span></div>
+        <div class="texto">
+          <div class="rotulo">Publicado em</div>
+          <div class="valor">12 de outubro de 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <span class="chip"><span class="ponto"></span>Deploy no GitHub Pages</span>
+
+    <div class="rodape">
+      <button class="btn" type="button" onclick="alert('Olá! Funcionou pelo remote.')">
+        <span class="ms">bolt</span>Testar
+      </button>
+      <p class="nota">Feito com Claude Code</p>
+    </div>
+  </main>
+</div>
+</body>
+</html>
